@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icon
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _BLENDENABLED_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DistortTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e8073a548a399e04b879007e62ba3448, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BlendEnabled: 1
+    - _Cull: 0
+    - _DistortEnable: 0
+    - _DistortInt: 0.215
+    - _DistortUVSpeedX: 1.41
+    - _DistortUVSpeedY: 0
+    - _DrsBlend: 0
+    - _DstBlend: 0
+    - _Opacity: 1
+    - _ScrBlend: 2
+    - _SrcBlend: 2
+    m_Colors:
+    - _BlendColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.16531092, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MulColor: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
