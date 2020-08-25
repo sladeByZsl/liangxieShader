@@ -24,11 +24,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: b778606cfe1283b4b94b8d9b3bc61d5a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a79c1accb1919d4e902f74a433d74de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _ColorMask: 15
+    - _ColorMask: 0
+    - _DstBlend: 10
+    - _SrcBlend: 5
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0

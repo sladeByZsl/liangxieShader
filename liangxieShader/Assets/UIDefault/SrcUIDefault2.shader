@@ -16,6 +16,10 @@ Shader "Custom/SrcUIDefault2"
 		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
 
 			_MaskTex("MaskTex", 2D) = "white" {}
+
+		[Enum(UnityEngine.Rendering.BlendMode)]_SrcBlend("Src Blend",int) = 0
+		[Enum(UnityEngine.Rendering.BlendMode)]_DstBlend("Dst Blend",int) = 0
+
 	}
 
 		SubShader
@@ -42,8 +46,13 @@ Shader "Custom/SrcUIDefault2"
 			Lighting Off
 			ZWrite Off
 			ZTest[unity_GUIZTestMode]
-			Blend SrcAlpha OneMinusSrcAlpha
+			Blend[_SrcBlend][_DstBlend]
 			ColorMask[_ColorMask]
+
+			Pass
+			{
+				ColorMask 0
+			}
 
 			Pass
 			{

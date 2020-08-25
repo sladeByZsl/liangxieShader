@@ -102,8 +102,10 @@ Shader "Custom/SoftClip"
 				float _ClipSoftY;
 				inline float SoftUnityGet2DClipping(in float2 position, in float4 clipRect)
 				{
+					//将裁剪内的坐标alpha添加一个除法，除以我需要软化的边缘像素值，_ClipSoftX=15，position距离clipRect 15坐标单位的点，其alpha为距离/15。
 					float2 xy = (position.xy - clipRect.xy) / float2(_ClipSoftX, _ClipSoftY)*step(clipRect.xy, position.xy);
 					float2 zw = (clipRect.zw - position.xy) / float2(_ClipSoftX, _ClipSoftY)*step(position.xy, clipRect.zw);
+					//factor是在距离左上和右下边距里，取个离边距最近的alpha值,最后将输出值规范化为0~1区间内的值
 					float2 factor = clamp(0, zw, xy);
 					return saturate(min(factor.x, factor.y));
 				}
