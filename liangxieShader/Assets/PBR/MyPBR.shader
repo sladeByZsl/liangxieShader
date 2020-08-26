@@ -116,13 +116,6 @@ Shader "Custom/MyPBR"
 			{
 				UNITY_EXTRACT_FOG(i);
 				float3 worldPos = i.worldPos.xyz;
-				#ifndef USING_DIRECTIONAL_LIGHT
-					fixed3 lightDir = normalize(UnityWorldSpaceLightDir(worldPos));
-				#else
-					fixed3 lightDir = _WorldSpaceLightPos0.xyz;
-				#endif
-				float3 worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
-
 				SurfaceOutputStandard o;
 				UNITY_INITIALIZE_OUTPUT(SurfaceOutputStandard,o);
 				fixed4 mainTex=tex2D(_MainTex,i.uv);
@@ -148,13 +141,13 @@ Shader "Custom/MyPBR"
 				gi.indirect.diffuse = 0;
 				gi.indirect.specular = 0;
 				gi.light.color = _LightColor0.rgb;
-				gi.light.dir = lightDir;
+				gi.light.dir =  _WorldSpaceLightPos0.xyz;
 				// Call GI (lightmaps/SH/reflections) lighting function
 				UnityGIInput giInput;
 				UNITY_INITIALIZE_OUTPUT(UnityGIInput, giInput);
 				giInput.light = gi.light;
 				giInput.worldPos = worldPos;
-				giInput.worldViewDir = worldViewDir;
+				giInput.worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
 				giInput.atten = atten;
 				#if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
 					giInput.lightmapUV = i.lmap;
@@ -181,7 +174,7 @@ Shader "Custom/MyPBR"
 				LightingStandard_GI(o, giInput, gi);
 
 				//PBS的核心计算
-				fixed4 c = LightingStandard(o, worldViewDir, gi);
+				fixed4 c = LightingStandard(o, giInput.worldViewDir, gi);
 				UNITY_APPLY_FOG(_unity_fogCoord, c); // apply fog
 				return c;
 			}
