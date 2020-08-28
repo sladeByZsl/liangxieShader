@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Icon
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 7ed259e219694df4aa92333034ce99ca, type: 3}
   m_ShaderKeywords: _BLENDENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,4 +44,3 @@ Material:
     - _Color: {r: 1, g: 0.16531092, b: 0, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _MulColor: {r: 1, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
