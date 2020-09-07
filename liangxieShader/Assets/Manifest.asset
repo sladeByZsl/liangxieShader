@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c9e31a85d6cfc4489ec154cdef066c, type: 3}
+  m_Name: Manifest
+  m_EditorClassIdentifier: 
+  activeVariants: []
+  dirs:
+  - Assets/Arts/ui/panel
+  assets:
+  - name: StartPanel.prefab
+    bundle: 0
+    dir: 0
+  bundles:
+  - name: assets/arts/ui/panel/startpanel.prefab.unity3d
+    id: 0
+    deps: 
+    len: 12686
+    hash: e66d20f4a1b3646b679576dd89a4acb5
